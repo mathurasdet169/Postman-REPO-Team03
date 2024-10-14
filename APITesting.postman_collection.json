@@ -1,0 +1,726 @@
+{
+	"info": {
+		"_postman_id": "cee7fafb-d1c9-4eb0-baa5-418a00600575",
+		"name": "APITesting",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25311702"
+	},
+	"item": [
+		{
+			"name": "DDT_Negative_Scenarios",
+			"item": [
+				{
+					"name": "POST negative scenarios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonResponse = pm.response.json();\r",
+									"var user_ID=jsonResponse.user_id;\r",
+									"\r",
+									"pm.test(\"Statuscodevalidation\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get('exp_statuscode'))\r",
+									"});\r",
+									"if(pm.response.code===201)\r",
+									"{\r",
+									"    pm.collectionVariables.set('userID',jsonResponse.user_id);\r",
+									"\r",
+									" pm.test('Response has a valid Content-Type header', function() {\r",
+									"  pm.expect(pm.response.headers.get('content-type')).to.include('application/json');\r",
+									"});\r",
+									"\r",
+									"   pm.test(\"POST Data Type Validation\",()=>{\r",
+									"    \r",
+									"    const user = pm.response.json(); // Assuming this is the response\r",
+									"\r",
+									"    // Validate user_first_name\r",
+									"    pm.expect(user).to.have.property('user_first_name');\r",
+									"    pm.expect(user.user_first_name).to.satisfy(val => typeof val === 'string' || val === null);\r",
+									"\r",
+									"    // Validate user_last_name\r",
+									"    pm.expect(user).to.have.property('user_last_name');\r",
+									"    pm.expect(user.user_last_name).to.satisfy(val => typeof val === 'string' || val === null);\r",
+									"\r",
+									"    // Validate user_email_id\r",
+									"    pm.expect(user).to.have.property('user_email_id');\r",
+									"    pm.expect(user.user_email_id).to.satisfy(val => typeof val === 'string' || val === null);\r",
+									"\r",
+									"    // Validate user_contact_number\r",
+									"    pm.expect(user).to.have.property('user_contact_number');\r",
+									"    pm.expect(user.user_contact_number).to.satisfy(val => typeof val === 'number' || val === null);\r",
+									"\r",
+									"    // Validate userAddress\r",
+									"    pm.expect(user).to.have.property('userAddress').that.is.an('object');\r",
+									"\r",
+									"    // Validate userAddress properties\r",
+									"    const address = user.userAddress;\r",
+									"    pm.expect(address).to.have.property('plotNumber');\r",
+									"    pm.expect(address.plotNumber).to.satisfy(val => typeof val === 'string' || val === null);\r",
+									"    \r",
+									"   pm.expect(address).to.have.property('street');\r",
+									"    pm.expect(address.street).to.satisfy(val => typeof val === 'string' || val === null);\r",
+									"    \r",
+									"    pm.expect(address).to.have.property('state');\r",
+									"    pm.expect(address.state).to.satisfy(val => typeof val === 'string' || val === null);\r",
+									"    \r",
+									"    pm.expect(address).to.have.property('country');\r",
+									"    pm.expect(address.country).to.satisfy(val => typeof val === 'string' || val === null);\r",
+									"    \r",
+									"    pm.expect(address).to.have.property('zipCode');\r",
+									"    pm.expect(address.zipCode).to.satisfy(val => typeof val === 'number' || val === null);\r",
+									"});\r",
+									"    var schema = {\r",
+									"  \"type\": \"object\",\r",
+									"  \"properties\": {\r",
+									"    \"user_first_name\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"user_last_name\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"user_contact_number\": {\r",
+									"      \"type\": \"integer\"\r",
+									"    },\r",
+									"    \"user_email_id\": {\r",
+									"      \"type\": \"string\"\r",
+									"    },\r",
+									"    \"userAddress\": {\r",
+									"      \"type\": \"object\",\r",
+									"      \"properties\": {\r",
+									"        \"plotNumber\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"street\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"state\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"country\": {\r",
+									"          \"type\": \"string\"\r",
+									"        },\r",
+									"        \"zipCode\": {\r",
+									"          \"type\": \"integer\"\r",
+									"        }\r",
+									"      },\r",
+									"      \"required\": [\r",
+									"        \"plotNumber\",\r",
+									"        \"street\",\r",
+									"        \"state\",\r",
+									"        \"country\",\r",
+									"        \"zipCode\"\r",
+									"      ]\r",
+									"    }\r",
+									"  },\r",
+									"  \"required\": [\r",
+									"    \"user_first_name\",\r",
+									"    \"user_last_name\",\r",
+									"    \"user_contact_number\",\r",
+									"    \"user_email_id\",\r",
+									"    \"userAddress\"\r",
+									"  ]\r",
+									"};\r",
+									"\r",
+									"pm.test(\"Schema Validation\", () => {\r",
+									"  pm.response.to.have.jsonSchema(schema);\r",
+									"});\r",
+									"\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n               \r\n        \"user_first_name\": \"{{user_first_name}}\",\r\n        \"user_last_name\": \"{{user_last_name}}\",\r\n        \"user_contact_number\": {{user_contact_number}},\r\n        \"user_email_id\": \"{{user_email_id}}\",\r\n        \"userAddress\": {\r\n            \r\n            \"plotNumber\": \"{{plotNumber}}\",\r\n            \"street\": \"{{street}}\",\r\n            \"state\": \"{{state}}\",\r\n            \"country\": \"{{country}}\",\r\n            \"zipCode\": {{zipCode}}\r\n        }\r\n       \r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{endpoint}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{endpoint}}"
+							],
+							"query": [
+								{
+									"key": "exp_statuscode",
+									"value": "{{exp_statuscode}}",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Users negative scenarios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"StatusCodeValidation\",()=>\r",
+									"{\r",
+									"    pm.response.to.have.status(pm.variables.get('exp_statuscode'))\r",
+									"});\r",
+									"\r",
+									"if(pm.response.code===200)\r",
+									"{\r",
+									"\r",
+									"   pm.test('Response has a valid Content-Type header', function() {\r",
+									"  pm.expect(pm.response.headers.get('content-type')).to.include('application/json');\r",
+									"});\r",
+									"\r",
+									"}\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var method=pm.variables.get('method');\r",
+									"pm.variables.set('METHOD',method);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "{{METHOD}}",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/{{endpoint}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{endpoint}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET By Username negative scenarios",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var method=pm.variables.get('method');\r",
+									"pm.variables.set('METHOD',method);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code validation\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get('exp_statuscode'));\r",
+									"});\r",
+									"if(pm.response.code===200)\r",
+									"{\r",
+									"\r",
+									"   pm.test('Response has a valid Content-Type header', function() {\r",
+									"  pm.expect(pm.response.headers.get('content-type')).to.include('application/json');\r",
+									"});\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "{{METHOD}}",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/{{endpoint}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{endpoint}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET By UserID negative scenarios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"pm.test(\"Status code validation\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get('exp_statuscode'));\r",
+									"});\r",
+									"if(pm.response.code===200)\r",
+									"{\r",
+									"\r",
+									"   pm.test('Response has a valid Content-Type header', function() {\r",
+									"  pm.expect(pm.response.headers.get('content-type')).to.include('application/json');\r",
+									"});\r",
+									"\r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var method=pm.variables.get('method');\r",
+									"pm.variables.set('METHOD',method);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "{{METHOD}}",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{endpoint}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{endpoint}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT negative scenarios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var JsonResponse=pm.response.json();\r",
+									"pm.test(\"Status code validation\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get('exp_statuscode'));\r",
+									"});\r",
+									"if(pm.response.code===200)\r",
+									"{\r",
+									"    var updatedusername=JsonResponse.user_first_name;\r",
+									"    pm.collectionVariables.set('user_FName',updatedusername);\r",
+									"\r",
+									"   \r",
+									"  \r",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n               \r\n        \"user_first_name\": \"{{user_first_name}}\",\r\n        \"user_last_name\": \"{{user_last_name}}\",\r\n        \"user_contact_number\": {{user_contact_number}},\r\n        \"user_email_id\": \"{{user_email_id}}\",\r\n        \"userAddress\": {\r\n            \r\n            \"plotNumber\": \"{{plotNumber}}\",\r\n            \"street\": \"{{street}}\",\r\n            \"state\": \"{{state}}\",\r\n            \"country\": \"{{country}}\",\r\n            \"zipCode\": {{zipCode}}\r\n        }\r\n       \r\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{endpoint}}/{{userID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{endpoint}}",
+								"{{userID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE By UserName negative scenarios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code validation\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get('exp_statuscode'));\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var method=pm.variables.get('method');\r",
+									"pm.variables.set('METHOD',method);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "{{METHOD}}",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/{{endpoint}}/{{user_FName}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{endpoint}}",
+								"{{user_FName}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user with only mandatory fields fromJSON DDT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonResponse = pm.response.json();\r",
+									"var id=jsonResponse.user_id;\r",
+									"pm.collectionVariables.set(\"User_FName\", jsonResponse.user_first_name);\r",
+									"pm.collectionVariables.set(\"userID\", id);\r",
+									"\r",
+									"pm.test(\"Validate the status\",function(){\r",
+									"//pm.expect(pm.request.body.user_first_name).include(username);\r",
+									"//console.log(username);\r",
+									"//console.log(user1);\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"user_first_name\":  \"{{user_first_name}}\",\r\n \"user_last_name\":  \"{{user_last_name}}\",         \r\n \"user_contact_number\": {{user_contact_number}},  \r\n  \"user_email_id\": \"{{user_email_id}}\",\r\n\r\n\"userAddress\": {\r\n   }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/{{endpoint}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{endpoint}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE By UserID negative scenarios",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code validation\", function () {\r",
+									"    pm.response.to.have.status(pm.variables.get('exp_statuscode'));\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var method=pm.variables.get('method');\r",
+									"pm.variables.set('METHOD',method);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "{{METHOD}}",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/{{endpoint}}/{{userID}}",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"{{endpoint}}",
+								"{{userID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "{{password}}",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "{{username}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test('Response has a valid Content-Type header', function() {\r",
+							"  pm.expect(pm.response.headers.get('content-type')).to.include('application/json');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "userapi@october",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "Numpy@gmail.com",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/user/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{password}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{username}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"// Load data from file\r",
+					"\t\t\t\t\tif (typeof pm.variables.get('requestsData') !== 'object') {\r",
+					"\t\t\t\t\t    pm.variables.set('requestsData', pm.iterationData.toObject());\r",
+					"\t\t\t\t\t}\r",
+					"\t\t\t\t\tconst requestsData = pm.variables.get('requestsData');\r",
+					"\t\t\t\t\r",
+					"\t\t\t\t\tif (typeof requestsData !== 'object' || Object.keys(requestsData).length === 0) {\r",
+					"\t\t\t\t\t    console.log('No external data provided or object is empty.');\r",
+					"\t\t\t\t\t    return;\r",
+					"\t\t\t\t\t}\r",
+					"\t\t\t\t\t\r",
+					"\t\t\t\t\t// Find the current request\r",
+					"\t\t\t\t\tconst currentRequest = requestsData.requests.filter(({name}) => name === pm.info.requestName)[0];\r",
+					"\t\t\t\t\t\r",
+					"\t\t\t\t\t// Skip the rest since we have no data\r",
+					"\t\t\t\t\tif (!currentRequest) {\r",
+					"\t\t\t\t\t    console.log(`Request ${pm.info.requestName} has no data defined.`);\r",
+					"\t\t\t\t\t    return;\r",
+					"\t\t\t\t\t}\r",
+					"\t\t\t\t\t\r",
+					"\t\t\t\t\t// Expose variables\r",
+					"\t\t\t\t\tconst variables = currentRequest.data.shift();\r",
+					"\t\t\t\t\t\r",
+					"\t\t\t\t\tfor (const [key,value] of Object.entries(variables)) {\r",
+					"\t\t\t\t\t    pm.variables.set(key, value);\r",
+					"\r",
+					"\t\t\t\t\t}\r",
+					"\t\t\t\t\t\r",
+					"\t\t\t\t\tpm.variables.set('requestsData', requestsData);\r",
+					"\t\t\t\t\t//pm.variables.set(\"first_name\",currentRequest.data.user_first_name);\r",
+					"\r",
+					"\t\t\t\t\t// Decide where to go next\r",
+					"\t\t\t\t\tif (currentRequest.data.length > 0) {\r",
+					"\t\t\t\t\t    pm.execution.setNextRequest(pm.info.requestName);\r",
+					"\t\t\t\t\t}\r",
+					"\t\t"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "userserviceapp-f5a54828541b.herokuapp.com/uap"
+		},
+		{
+			"key": "userID",
+			"value": "id"
+		},
+		{
+			"key": "user_name",
+			"value": ""
+		},
+		{
+			"key": "User_FName",
+			"value": ""
+		},
+		{
+			"key": "userID1",
+			"value": ""
+		},
+		{
+			"key": "exp_statuscode",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "user_FName",
+			"value": ""
+		}
+	]
+}

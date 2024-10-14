@@ -1,0 +1,1380 @@
+[
+	{
+		"requests":[
+										
+					{
+						"name":"POST negative scenarios",
+						"data":[
+								{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776622,
+							"user_email_id": "teamo3Mathu11@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createuse",
+							"exp_statuscode":404
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776622,
+							"user_email_id": "teamo3Mathu11@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":201
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776622,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":409
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu11@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":409
+						},
+						
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan12",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu123",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": "",
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 998877662,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 998877662359,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": "yut675898",
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "@teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com@",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": ".teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com.",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "123456789897.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "gftbkkhfvhbjgmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "90810",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pluio",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "78965",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "@#$%^",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "7865",
+							"country": "USA",
+							"zipCode": "",
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "%^$#&",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "67854",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "*&^%",
+							"zipCode": 10081,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan@!",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "US",
+							"zipCode": 67543,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						},
+						
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Kalyan",
+							"user_last_name": "Manu$#",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathu12@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "use",
+							"zipCode": 54321,
+							"endpoint":"createusers",
+							"exp_statuscode":400
+						}
+								
+								]
+					},
+					{
+						"name":"GET All Users negative scenarios",
+						"data":[
+						
+						{	
+							"method":"POST",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"endpoint":"users",
+							"exp_statuscode":405
+						},
+						{	
+							"method":"PUT",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"endpoint":"users",
+							"exp_statuscode":405
+						},
+						{	
+							"method":"DELETE",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"endpoint":"users",
+							"exp_statuscode":405
+						},
+						
+						
+						{
+							"method":"GET",
+							"username":"Numpy@gmail.com",
+							"password":"us@october",							
+							"endpoint":"users",
+							"exp_statuscode":401
+						},
+						{
+							"method":"GET",
+							"username":"Nu@gmail.com",
+							"password":"userapi@october",							
+							"endpoint":"users",
+							"exp_statuscode":401
+						},
+						
+						{
+							"method":"GET",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",							
+							"endpoint":"",
+							"exp_statuscode":404
+						},
+						{
+							"method":"GET",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",							
+							"endpoint":"us",
+							"exp_statuscode":404
+						},
+						{
+							"method":"GET",
+							"username":"",
+							"password":"",							
+							"endpoint":"users",
+							"exp_statuscode":401
+						}
+					
+					
+					
+						]
+						
+					},
+					{
+						"name":"GET By Username negative scenarios",
+						"data":[
+						
+						{
+							"method":"POST",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":405,
+							"endpoint":"users/username/Kalyan"
+						},
+						{
+							"method":"PUT",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":405,
+							"endpoint":"users/username/Kalyan"
+						},
+						{
+							"method":"DELETE",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",							
+							"exp_statuscode":405,
+							"endpoint":"users/username/Kalyan"
+						},
+						{
+							"method":"GET",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"endpoint":"users/username/",
+							"exp_statuscode":404
+						},
+						{
+							"method":"GET",
+							"username":"Num@gmail.com",
+							"password":"userapi@october",
+							"endpoint":"users/username/Kalyan",
+							"exp_statuscode":401
+						},
+						{
+							"method":"GET",
+							"username":"Numpy@gmail.com",
+							"password":"user@october",							
+							"exp_statuscode":401,
+							"endpoint":"users/username/Kalyan"
+						
+						}
+					
+					
+						]
+						
+					},
+					{
+						"name":"GET By UserID negative scenarios",
+						"data":[
+						
+						{
+							"method":"POST",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":405,
+							"endpoint":"user/1"
+					
+						},
+						{
+							"method":"PUT",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":405,
+							"endpoint":"user/1"
+					
+						},
+						{
+							"method":"GET",
+							"username":"Num@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":401,
+							"endpoint":"user/1"
+					
+						},
+						{
+							"method":"GET",
+							"username":"Numpy@gmail.com",
+							"password":"use@october",
+							"exp_statuscode":401,
+							"endpoint":"user/1"
+					
+						},
+						{
+							"method":"GET",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":404,
+							"endpoint":"us/1"
+					
+						},
+						{
+							"method":"GET",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":404,
+							"endpoint":"user/"
+					
+						}
+					
+						]
+						
+					},
+					{
+						"name":"PUT negative scenarios",
+						"data":[
+						
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":200
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu122",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776624,
+							"user_email_id": "teamo3Mathura122@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru123",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623456,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "hfgdsrjkjkn,b,om",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "12244557879675",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "@teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com@",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "..teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com..",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": ".teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com.",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "23456",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "jkitg",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "@#$%^",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main1234",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "@#$%^",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "7689",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "@#%$",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "6778",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "@#$%",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":400
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "KL",
+							"zipCode": 10081,
+							"endpoint":"updat",
+							"exp_statuscode":404
+							
+						},
+						{
+							"username":"Num@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":401
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"user@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"updateuser",
+							"exp_statuscode":401
+							
+						},
+						{
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"user_first_name": "Mathu",
+							"user_last_name": "Thiru",
+							"user_contact_number": 9988776623,
+							"user_email_id": "teamo3Mathura@gmail.com",
+							"plotNumber": "Pl-10",
+							"street": "Main",
+							"state": "NY",
+							"country": "USA",
+							"zipCode": 10081,
+							"endpoint":"",
+							"exp_statuscode":404
+							
+						}
+					
+						]
+						
+					},
+					{
+						"name":"DELETE By UserName negative scenarios",
+						"data":[
+						
+						{
+							"endpoint":"deleteuser/username",
+							"method":"PUT",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":405
+							
+						},
+						{
+							"endpoint":"deleteuser/username",
+							"method":"POST",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":405
+							
+						},
+						{
+							"endpoint":"deleteuser/username",
+							"method":"GET",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":405
+							
+						},
+						{
+							"endpoint":"deleteuser/username",
+							"method":"DELETE",
+							"username":"Nu@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":401
+							
+						},
+						{
+							"endpoint":"deleteuser/username",
+							"method":"DELETE",
+							"username":"Numpy@gmail.com",
+							"password":"use@october",
+							"exp_statuscode":401
+							
+						},
+						{
+							"endpoint":"deleteuser/user",
+							"method":"DELETE",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":404
+							
+						},
+						{
+							"endpoint":"deleteuser/username",
+							"method":"DELETE",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":200
+							
+						}
+					
+					
+						]
+						
+					},
+					{
+						"name":"create user with only mandatory fields fromJSON DDT",
+						"data":[
+						
+						{
+							"user_first_name": "Kalyani",
+							"user_last_name": "Manu",
+							"user_contact_number": 9988776614,
+							"user_email_id": "teamo4Mathura@gmail.com",
+							"endpoint":"createusers"
+						}
+					
+						]
+						
+					},
+					
+					{
+						"name":"DELETE By UserID negative scenarios",
+						"data":[
+						
+						{
+							"endpoint":"deleteuser",
+							"method":"PUT",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":405
+							
+						},
+						{
+							"endpoint":"deleteuser",
+							"method":"POST",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":405
+							
+						},
+						{
+							"endpoint":"deleteuser",
+							"method":"GET",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":405
+							
+						},
+						{
+							"endpoint":"deleteuser",
+							"method":"DELETE",
+							"username":"Nu@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":401
+							
+						},
+						{
+							"endpoint":"deleteuser",
+							"method":"DELETE",
+							"username":"Numpy@gmail.com",
+							"password":"use@october",
+							"exp_statuscode":401
+							
+						},
+						{
+							"endpoint":"del",
+							"method":"DELETE",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":404
+							
+						},
+						{
+							"endpoint":"deleteuser",
+							"method":"DELETE",
+							"username":"Numpy@gmail.com",
+							"password":"userapi@october",
+							"exp_statuscode":200
+							
+						}
+					
+				]
+						
+			}
+				
+					
+		]
+	
+	}
+]
