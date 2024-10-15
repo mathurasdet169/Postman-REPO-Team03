@@ -1,0 +1,8 @@
+﻿EndPoint,StatusCode,Status,Username,Password,Comments,,,
+users,200,OK,Numpy@gmail.com,userapi@october,Valid,,,GET ALL USERS
+getusers,404,Not Found,Numpy@gmail.com,userapi@october,Invalid Endpoint,,,
+,404,Not Found,Numpy@gmail.com,userapi@october,Without Endpoint,,,
+users,401,Unauthorized,Numpy@gmail.com,Invalid,Invalid Auth pwd ,,,FAIL
+users,401,Unauthorized,Invalid,userapi@october,Invalid Auth Username ,,,
+users,401,Unauthorized,,,Invalid Auth,,,
+createusers,405,Method Not Allowed,Numpy@gmail.com,userapi@october,Invalid Method for POST,,,

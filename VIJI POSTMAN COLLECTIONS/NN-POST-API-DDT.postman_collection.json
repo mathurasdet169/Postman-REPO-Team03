@@ -1,0 +1,202 @@
+{
+	"info": {
+		"_postman_id": "cf9610c6-9556-4111-a212-956589248d4e",
+		"name": "NN-POST-API-DDT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29490019"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const username = pm.iterationData.get(\"UserName\");\r",
+							"const password = pm.iterationData.get(\"Password\");\r",
+							"const base64Credentials = require('btoa')(username + \":\" + password);\r",
+							"pm.request.headers.add({\r",
+							"    key: 'Authorization',\r",
+							"    value: 'Basic ' + base64Credentials\r",
+							"});\r",
+							"\r",
+							"const contentType = pm.iterationData.get(\"content-type\");\r",
+							"\r",
+							"// Set the content type header\r",
+							"pm.request.headers.add({\r",
+							"    key: \"Content-Type\",\r",
+							"    value: contentType\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							" let myResponse = pm.response.json();\r",
+							" const actualStatusCode = pm.response.code;\r",
+							" const expectedStatusCode = pm.iterationData.get(\"StatusCode\");\r",
+							" \r",
+							" console.log(\"The Expected Status Code is: \"+expectedStatusCode);\r",
+							" console.log(\"The Actual Status Code is: \"+actualStatusCode);\r",
+							"\r",
+							"   var schema = {\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"user_first_name\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"user_last_name\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"user_contact_number\": {\r",
+							"      \"type\": \"integer\"\r",
+							"    },\r",
+							"    \"user_email_id\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"userAddress\": {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"plotNumber\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"street\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"state\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"country\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"zipCode\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"plotNumber\",\r",
+							"        \"street\",\r",
+							"        \"state\",\r",
+							"        \"country\",\r",
+							"        \"zipCode\"\r",
+							"      ]\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"user_first_name\",\r",
+							"    \"user_last_name\",\r",
+							"    \"user_contact_number\",\r",
+							"    \"user_email_id\",\r",
+							"    \"userAddress\"\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"\r",
+							" //--------------------TEST VALIDATIONS---------------------\r",
+							"    pm.test(\"Test Status Code\",()=>{\r",
+							"        //---------------Status Code Test---------------------\r",
+							"        pm.expect(pm.response.code).to.eql(expectedStatusCode);  \r",
+							"         });\r",
+							"      if(expectedStatusCode===201){\r",
+							"\r",
+							"         //----------Created User First Name Validation--------\r",
+							"            pm.test(\"User Name Validation\", function () {\r",
+							"                const actualFirstName = myResponse.user_first_name;\r",
+							"                const expectedFirstName = pm.iterationData.get(\"First_Name\");\r",
+							"                pm.expect(actualFirstName).to.be.eql(expectedFirstName);\r",
+							"             });\r",
+							"\r",
+							"         //-------Response Time Validation---------------\r",
+							"            pm.test(\"Response time Validation\", function () {\r",
+							"                pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"              });\r",
+							"\r",
+							"         //------------Content Type Validation ------------\r",
+							"            pm.test(\"Content-Type Validation\", () => {\r",
+							"              pm.response.to.have.header('Content-Type', 'application/json');\r",
+							"             });\r",
+							"\r",
+							"         //------------Schema Validation--------------\r",
+							"             pm.test(\"Schema Validation\", () => {\r",
+							"             pm.response.to.have.jsonSchema(schema);\r",
+							"             });   \r",
+							"\r",
+							"         //-----Validate Data type of fields---\r",
+							"            pm.test(\"Validating fields VALUE TYPE in Response\",function(){\r",
+							"                pm.expect(myResponse).to.be.an(\"Object\");\r",
+							"                pm.expect(myResponse.userAddress).to.be.an(\"Object\");\r",
+							"                pm.expect(myResponse.user_id).to.be.a(\"Number\");\r",
+							"                pm.expect(myResponse.user_first_name).to.be.a(\"String\");\r",
+							"                pm.expect(myResponse.user_last_name).to.be.a(\"String\");\r",
+							"                pm.expect(myResponse.user_contact_number).to.be.an(\"Number\");\r",
+							"                pm.expect(myResponse.user_email_id).to.be.a(\"String\");\r",
+							"                pm.expect(myResponse.userAddress.addressId).to.be.a(\"Number\");\r",
+							"                pm.expect(myResponse.userAddress.plotNumber).to.be.a(\"String\");\r",
+							"                pm.expect(myResponse.userAddress.street).to.be.a(\"String\");\r",
+							"                pm.expect(myResponse.userAddress.state).to.be.a(\"String\");\r",
+							"                pm.expect(myResponse.userAddress.country).to.be.a(\"String\");\r",
+							"                pm.expect(myResponse.userAddress.zipCode).to.be.a(\"Number\");\r",
+							"                pm.expect(myResponse.creation_time).to.be.a('String');\r",
+							"                pm.expect(myResponse.last_mod_time).to.be.a(\"String\");\r",
+							"               });          \r",
+							"      }\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user_first_name\":  \"{{First_Name}}\",\r\n \"user_last_name\":  \"{{Last_Name}}\",       \r\n \"user_contact_number\": {{Contact_Number}},\r\n \"user_email_id\": \"{{Email_ID}}\",\r\n\"userAddress\": {   \r\n    \"plotNumber\" :\"{{Plot_Number}}\",\r\n   \"street\": \"{{Street}}\",\r\n   \"state\": \"{{State}}\",\r\n    \"country\": \"{{Country}} \",\r\n   \"zipCode\": {{ZipCode}} \r\n }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base-URL}}{{Create_User_Endpoint}}",
+					"host": [
+						"{{Base-URL}}{{Create_User_Endpoint}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
