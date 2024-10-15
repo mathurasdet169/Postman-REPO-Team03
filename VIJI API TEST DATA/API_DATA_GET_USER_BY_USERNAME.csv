@@ -1,0 +1,12 @@
+﻿FirstName,EndPoint,StatusCode,Status,Username,Password,Comments,
+vijaya,users/username/,200,OK,Numpy@gmail.com,userapi@october,Valid,GET USER BY USERNAME
+Vijayaintegral,users/username/,404,Not Found,Numpy@gmail.com,userapi@october,Non-existing Firstname,
+,users/username/,404,Not Found,Numpy@gmail.com,userapi@october,Without Firstname,
+Vijaya2434!,users/username/,404,Not Found,Numpy@gmail.com,userapi@october,AlphaNumeric Firstname,
+5436546,users/username/,404,Not Found,Numpy@gmail.com,userapi@october,Numeric Firstname,
+vijaya,,404,Not Found,Numpy@gmail.com,userapi@october,Without Endpoint,
+vijaya,myuser/username,404,Not Found,Numpy@gmail.com,userapi@october,Invalid Endpoint,
+vijaya,users/username/,401,Unauthorized,Numpy@gmail.com,Invalid,Invalid Auth pwd ,
+vijaya,users/username/,401,Unauthorized,Invalid,userapi@october,Invalid Auth Username ,
+vijaya,users/username/,401,Unauthorized,,,Without Auth,
+vijaya,deleteuser/username/,405,Method Not Allowed,Numpy@gmail.com,userapi@october,Invalid METHOD,

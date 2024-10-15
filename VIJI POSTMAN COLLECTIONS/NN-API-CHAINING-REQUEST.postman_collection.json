@@ -1,0 +1,1095 @@
+{
+	"info": {
+		"_postman_id": "ebb00b8b-f46a-4d69-88d8-053d2e946a63",
+		"name": "NN-API-CHAINING-REQUEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29490019"
+	},
+	"item": [
+		{
+			"name": "GET-ALL-USERS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const myResponse = pm.response.json();\r",
+							"const status = pm.response.status;\r",
+							"const actualStatusCode = pm.response.code;\r",
+							"const expectedStatusCode = 200;\r",
+							"\r",
+							"//----------To get the response Length---------\r",
+							"let respLength = myResponse.length;\r",
+							"console.log(\"My response length is \"+respLength);\r",
+							"\r",
+							"pm.collectionVariables.set(\"length\",respLength);\r",
+							"\r",
+							"//------Test Status Code------\r",
+							"pm.test(\"Status Code Validation\", function () {\r",
+							"    pm.expect(actualStatusCode).to.be.eql(expectedStatusCode);\r",
+							"});\r",
+							"\r",
+							"//-----Response Time Validation------\r",
+							"pm.test(\"Response time Validation\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"\r",
+							"//----------Content Type Validation------------\r",
+							"pm.test(\"Content-Type Validation\", () => {\r",
+							"  pm.response.to.have.header('Content-Type', 'application/json');\r",
+							"});\r",
+							"\r",
+							"//---------------Schema Validation------------------\r",
+							"var schema = {\r",
+							"  \"type\": \"array\",\r",
+							"  \"properties\": {\r",
+							"    \"user_first_name\": {\r",
+							"      \"type\": [\"string\", \"null\"] \r",
+							"    },\r",
+							"    \"user_last_name\": {\r",
+							"      \"type\": [\"string\", \"null\"]  \r",
+							"    },\r",
+							"    \"user_contact_number\": {\r",
+							"      \"type\": [\"number\", \"null\"]  \r",
+							"    },\r",
+							"    \"user_email_id\": {\r",
+							"      \"type\": [\"string\", \"null\"]  \r",
+							"    },\r",
+							"    \"userAddress\": {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"plotNumber\": {\r",
+							"          \"type\": [\"string\", \"null\"] \r",
+							"        },\r",
+							"        \"street\": {\r",
+							"          \"type\": [\"string\", \"null\"]  \r",
+							"        },\r",
+							"        \"state\": {\r",
+							"          \"type\": [\"string\", \"null\"]  \r",
+							"        },\r",
+							"        \"country\": {\r",
+							"          \"type\": [\"string\", \"null\"]  \r",
+							"        },\r",
+							"        \"zipCode\": {\r",
+							"          \"type\": [\"number\", \"null\"]  \r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\"plotNumber\", \"street\", \"state\", \"country\", \"zipCode\"]\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\"user_first_name\", \"user_last_name\", \"user_contact_number\", \"user_email_id\", \"userAddress\"]\r",
+							"\r",
+							"};\r",
+							"\r",
+							"//-----------Schema Validation--------------------------\r",
+							"pm.test(\"Schema Validation\", () => {\r",
+							"  pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base-URL}}{{GetAllUsersEndPoint}}",
+					"host": [
+						"{{Base-URL}}{{GetAllUsersEndPoint}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE NEW USER",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const myResponse = pm.response.json();\r",
+							"const actualStatusCode = pm.response.code;\r",
+							"const expectedStatusCode = 201;\r",
+							"\r",
+							"var schema = {\r",
+							"  \r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"user_first_name\": {\r",
+							"      \"type\": [\"string\", \"null\"] \r",
+							"    },\r",
+							"    \"user_last_name\": {\r",
+							"      \"type\": [\"string\", \"null\"]  \r",
+							"    },\r",
+							"    \"user_contact_number\": {\r",
+							"      \"type\": [\"number\", \"null\"]  \r",
+							"    },\r",
+							"    \"user_email_id\": {\r",
+							"      \"type\": [\"string\", \"null\"]  \r",
+							"    },\r",
+							"    \"userAddress\": {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"plotNumber\": {\r",
+							"          \"type\": [\"string\", \"null\"] \r",
+							"        },\r",
+							"        \"street\": {\r",
+							"          \"type\": [\"string\", \"null\"]  \r",
+							"        },\r",
+							"        \"state\": {\r",
+							"          \"type\": [\"string\", \"null\"]  \r",
+							"        },\r",
+							"        \"country\": {\r",
+							"          \"type\": [\"string\", \"null\"]  \r",
+							"        },\r",
+							"        \"zipCode\": {\r",
+							"          \"type\": [\"number\", \"null\"]  \r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\"plotNumber\", \"street\", \"state\", \"country\", \"zipCode\"]\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\"user_first_name\", \"user_last_name\", \"user_contact_number\", \"user_email_id\", \"userAddress\"]\r",
+							"\r",
+							"};\r",
+							"\r",
+							"//-----------------Test Status Code------\r",
+							"pm.test(\"Status Code Validation\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(expectedStatusCode);\r",
+							"   });\r",
+							"\r",
+							"//--------------User First Name Validation------------\r",
+							"pm.test(\"User Name Validation\", function () {\r",
+							"    const actualFirstName = myResponse.user_first_name;\r",
+							"    const expectedFirstName = pm.variables.get(\"First_Name\");\r",
+							"    pm.expect(actualFirstName).to.be.eql(expectedFirstName);\r",
+							"  });\r",
+							"\r",
+							"//--------------Response Time Validation-----------------\r",
+							"pm.test(\"Response time Validation\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"//-----------Schema Validation-------------\r",
+							"pm.test(\"Schema Validation\", () => {\r",
+							"  pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"\r",
+							"//---------------Content Type Validation------------\r",
+							"pm.test(\"Content-Type Validation\", () => {\r",
+							"pm.response.to.have.header('Content-Type', 'application/json');\r",
+							"});\r",
+							"\r",
+							"//--------------DATA TYPE Validation--------------\r",
+							"pm.test(\"Data Type Validation\",()=>{\r",
+							"    \r",
+							"    // Validate user_first_name\r",
+							"    pm.expect(myResponse).to.have.property('user_first_name');\r",
+							"    pm.expect(myResponse.user_first_name).to.satisfy(val => typeof val === 'string' || val === null);\r",
+							"\r",
+							"    // Validate user_last_name\r",
+							"    pm.expect(myResponse).to.have.property('user_last_name');\r",
+							"    pm.expect(myResponse.user_last_name).to.satisfy(val => typeof val === 'string' || val === null);\r",
+							"\r",
+							"    // Validate user_email_id\r",
+							"    pm.expect(myResponse).to.have.property('user_email_id');\r",
+							"    pm.expect(myResponse.user_email_id).to.satisfy(val => typeof val === 'string' || val === null);\r",
+							"\r",
+							"    // Validate user_contact_number\r",
+							"    pm.expect(myResponse).to.have.property('user_contact_number');\r",
+							"    pm.expect(myResponse.user_contact_number).to.satisfy(val => typeof val === 'number' || val === null);\r",
+							"\r",
+							"    // Validate userAddress\r",
+							"    pm.expect(myResponse).to.have.property('userAddress').that.is.an('object');\r",
+							"\r",
+							"    // Validate userAddress properties\r",
+							"    const address = myResponse.userAddress;\r",
+							"    pm.expect(address).to.have.property('plotNumber');\r",
+							"    pm.expect(address.plotNumber).to.satisfy(val => typeof val === 'string' || val === null);\r",
+							"    \r",
+							"    pm.expect(address).to.have.property('street');\r",
+							"    pm.expect(address.street).to.satisfy(val => typeof val === 'string' || val === null);\r",
+							"    \r",
+							"    pm.expect(address).to.have.property('state');\r",
+							"    pm.expect(address.state).to.satisfy(val => typeof val === 'string' || val === null);\r",
+							"    \r",
+							"    pm.expect(address).to.have.property('country');\r",
+							"    pm.expect(address.country).to.satisfy(val => typeof val === 'string' || val === null);\r",
+							"    \r",
+							"    pm.expect(address).to.have.property('zipCode');\r",
+							"    pm.expect(address.zipCode).to.satisfy(val => typeof val === 'number' || val === null);\r",
+							"});\r",
+							"\r",
+							"//-------------Set up of Collection Variable and Next Request------------\r",
+							" if(actualStatusCode===201){\r",
+							"    const ActualUserID = myResponse.user_id;\r",
+							"    const UsernameCreated = myResponse.user_first_name;\r",
+							"    pm.collectionVariables.set(\"CreatedUserID\",ActualUserID);\r",
+							"    pm.collectionVariables.set(\"CreatedUserName\",UsernameCreated);}\r",
+							"\r",
+							" if (actualStatusCode !==201){\r",
+							"    console.log(\"its not a 201 in POST\");\r",
+							"    pm.execution.setNextRequest(null);\r",
+							"   }\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//-----Generate a random String--------\r",
+							"var random = Math.random().toString(26).substring(2);\r",
+							"\r",
+							"// Generate a random 10-digit number\r",
+							"function generateRandom10DigitNumber() {\r",
+							"    return Math.floor(1000000000 + Math.random() * 9000000000);\r",
+							"}\r",
+							"\r",
+							"var emailId = \"Team3\"+random+\"@gmail.com\"; \r",
+							"var contactNo = generateRandom10DigitNumber();\r",
+							"\r",
+							"pm.variables.set(\"First_Name\",\"Teamthree\");\r",
+							"pm.variables.set(\"Last_Name\",\"lastName\");\r",
+							"pm.variables.set(\"email_id\",emailId);\r",
+							"pm.variables.set(\"contactNumber\",contactNo);\r",
+							"pm.variables.set(\"Street\",\"First St\");\r",
+							"pm.variables.set(\"PlotNumber\",\"Bt-11\");\r",
+							"pm.variables.set(\"State\",\"Texas\");\r",
+							"pm.variables.set(\"Country\",\"USA\");\r",
+							"pm.variables.set(\"ZIP\",54877);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user_first_name\":  \"{{First_Name}}\",\r\n \"user_last_name\":  \"{{Last_Name}}\",       \r\n \"user_contact_number\":  {{contactNumber}},\r\n \"user_email_id\": \"{{email_id}}\",\r\n  \"userAddress\": {\r\n     \"street\": \"{{Street}}\",\r\n     \"plotNumber\": \"{{PlotNumber}}\",\r\n   \"state\": \"{{State}}\",\r\n    \"country\": \"{{Country}}\",\r\n   \"zipCode\": {{ZIP}}\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base-URL}}{{CreateUserEndPoint}}",
+					"host": [
+						"{{Base-URL}}{{CreateUserEndPoint}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-ALL-USERS COUNT INCREASE TEST",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const myResponse = pm.response.json();\r",
+							"const actualStatusCode = pm.response.code;\r",
+							"const expectedStatusCode = 200;\r",
+							"\r",
+							"let prevLength = pm.collectionVariables.get(\"length\")+1;\r",
+							"let newLength = myResponse.length;\r",
+							"console.log(\"My response length is \"+newLength);\r",
+							"\r",
+							"//--------Test the response length increased by 1------\r",
+							"pm.test(\"Check the response length Increased\",()=>{\r",
+							"    pm.expect(newLength).to.be.eql(prevLength);\r",
+							"})\r",
+							"\r",
+							"//------Test Status Code------\r",
+							"pm.test(\"Status Code Validation\", function () {\r",
+							"    pm.expect(actualStatusCode).to.be.eql(expectedStatusCode);\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base-URL}}{{GetAllUsersEndPoint}}",
+					"host": [
+						"{{Base-URL}}{{GetAllUsersEndPoint}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-USER-BY-ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const myResponse = pm.response.json();\r",
+							"const status = pm.response.status;\r",
+							"const actualStatusCode = pm.response.code;\r",
+							"\r",
+							"pm.test(\"Content-Type Validation\", () => {\r",
+							"pm.response.to.have.header('Content-Type', 'application/json');\r",
+							"});\r",
+							"\r",
+							"//------Test Status Code------\r",
+							"pm.test(\"Status Code Validation\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"   });\r",
+							"\r",
+							"pm.test(\"User ID Validation\", function () {\r",
+							"    const ActualUserID = myResponse.user_id;\r",
+							"    const ExpectedUserID = pm.collectionVariables.get(\"CreatedUserID\");\r",
+							"    pm.expect(ActualUserID).to.be.eql(ExpectedUserID);\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Response time Validation\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"var schema = {\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"user_first_name\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"user_last_name\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"user_contact_number\": {\r",
+							"      \"type\": \"integer\"\r",
+							"    },\r",
+							"    \"user_email_id\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"userAddress\": {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"plotNumber\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"street\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"state\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"country\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"zipCode\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"plotNumber\",\r",
+							"        \"street\",\r",
+							"        \"state\",\r",
+							"        \"country\",\r",
+							"        \"zipCode\"\r",
+							"      ]\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"user_first_name\",\r",
+							"    \"user_last_name\",\r",
+							"    \"user_contact_number\",\r",
+							"    \"user_email_id\",\r",
+							"    \"userAddress\"\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"pm.test(\"Schema Validation\", () => {\r",
+							"  pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validating fields VALUE TYPE in Response\",function(){\r",
+							"   pm.expect(myResponse).to.be.an(\"Object\");\r",
+							"   pm.expect(myResponse.userAddress).to.be.an(\"Object\");\r",
+							"   pm.expect(myResponse.user_id).to.be.a(\"Number\");\r",
+							"   pm.expect(myResponse.user_first_name).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse.user_last_name).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse.user_contact_number).to.be.an(\"Number\");\r",
+							"   pm.expect(myResponse.user_email_id).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse.userAddress.addressId).to.be.a(\"Number\");\r",
+							"   pm.expect(myResponse.userAddress.plotNumber).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse.userAddress.street).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse.userAddress.state).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse.userAddress.country).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse.userAddress.zipCode).to.be.a(\"Number\");\r",
+							"   pm.expect(myResponse.creation_time).to.be.a('String');\r",
+							"   pm.expect(myResponse.last_mod_time).to.be.a(\"String\");\r",
+							"   });\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base-URL}}{{GetUserByIdEndPoint}}{{CreatedUserID}}",
+					"host": [
+						"{{Base-URL}}{{GetUserByIdEndPoint}}{{CreatedUserID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-USER-BY-USERNAME",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const myResponse = pm.response.json();\r",
+							"const status = pm.response.status;\r",
+							"const actualStatusCode = pm.response.code;\r",
+							"\r",
+							"\r",
+							"//---------------Schema Validation------------------\r",
+							"var schema = {\r",
+							"  \"type\": \"array\",\r",
+							"  \"properties\": {\r",
+							"    \"user_first_name\": {\r",
+							"      \"type\": \"string\"||null\r",
+							"    },\r",
+							"    \"user_last_name\": {\r",
+							"      \"type\": \"string\"||null\r",
+							"    },\r",
+							"    \"user_contact_number\": {\r",
+							"      \"type\": \"integer\"\r",
+							"    },\r",
+							"    \"user_email_id\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"userAddress\": {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"plotNumber\": {\r",
+							"          \"type\": \"string\"||null\r",
+							"        },\r",
+							"        \"street\": {\r",
+							"          \"type\": \"string\"||null\r",
+							"        },\r",
+							"        \"state\": {\r",
+							"          \"type\": \"string\"||null\r",
+							"        },\r",
+							"        \"country\": {\r",
+							"          \"type\": \"string\"||null\r",
+							"        },\r",
+							"        \"zipCode\": {\r",
+							"          \"type\": \"string\"||null\r",
+							"         }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"plotNumber\",\r",
+							"        \"street\",\r",
+							"        \"state\",\r",
+							"        \"country\",\r",
+							"        \"zipCode\"\r",
+							"      ]\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"user_first_name\",\r",
+							"    \"user_last_name\",\r",
+							"    \"user_contact_number\",\r",
+							"    \"user_email_id\",\r",
+							"    \"userAddress\"\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"//------Test Status Code------\r",
+							"pm.test(\"Status Code Validation\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"   });\r",
+							"\r",
+							"//-----User Name Validation------------\r",
+							"pm.test(\"User Name Validation\", function () {\r",
+							"    const ActualUserName = myResponse[0].user_first_name;\r",
+							"    const ExpectedUserName = pm.collectionVariables.get(\"CreatedUserName\");\r",
+							"    pm.expect(ActualUserName).to.be.eql(ExpectedUserName);\r",
+							"  });\r",
+							"\r",
+							"//-----Response Time Validation------\r",
+							"pm.test(\"Response time Validation\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(300);\r",
+							"});\r",
+							"\r",
+							"//-----------Schema Validation-----------\r",
+							"pm.test(\"Schema Validation\", () => {\r",
+							"  pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"Validating fields VALUE TYPE in Response\",function(){\r",
+							"   pm.expect(myResponse).to.be.an(\"array\");\r",
+							"   pm.expect(myResponse[0].userAddress).to.be.an(\"Object\");\r",
+							"   pm.expect(myResponse[0].user_id).to.be.a(\"Number\");\r",
+							"   pm.expect(myResponse[0].user_first_name).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse[0].user_last_name).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse[0].user_contact_number).to.be.an(\"Number\");\r",
+							"   pm.expect(myResponse[0].user_email_id).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse[0].userAddress.addressId).to.be.a(\"Number\");\r",
+							"   pm.expect(myResponse[0].userAddress.plotNumber).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse[0].userAddress.street).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse[0].userAddress.state).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse[0].userAddress.country).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse[0].userAddress.zipCode).to.be.a(\"Number\");\r",
+							"   pm.expect(myResponse[0].creation_time).to.be.a('String');\r",
+							"   pm.expect(myResponse[0].last_mod_time).to.be.a(\"String\");\r",
+							"   });\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base-URL}}{{GetUserByFirstNameEndPoint}}{{CreatedUserName}}",
+					"host": [
+						"{{Base-URL}}{{GetUserByFirstNameEndPoint}}{{CreatedUserName}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE USER DATA",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"var random = Math.random().toString(26).substring(2);\r",
+							"\r",
+							"// Generate a random 10-digit number\r",
+							"function generateRandom10DigitNumber() {\r",
+							"    return Math.floor(1000000000 + Math.random() * 9000000000);\r",
+							"}\r",
+							"var contactNo = generateRandom10DigitNumber();\r",
+							"var emailId = \"Team3\"+random+\"@gmail.com\"; \r",
+							"\r",
+							"pm.variables.set(\"First_Name\",\"newfirstname\");\r",
+							"pm.variables.set(\"Last_Name\",\"newlastname\");\r",
+							"pm.variables.set(\"Street\",\"UpdateSt\");\r",
+							"pm.variables.set(\"PlotNumber\",\"Pl-11\");\r",
+							"pm.variables.set(\"State\",\"OHIO\");\r",
+							"pm.variables.set(\"Country\",\"India\");\r",
+							"pm.variables.set(\"ZIP\",88888);\r",
+							"pm.variables.set(\"contactNumber\",contactNo);\r",
+							"pm.variables.set(\"email_id\",emailId);\r",
+							"\r",
+							"console.log(\"firstName\",pm.variables.get(\"First_Name\"));\r",
+							"console.log(\"Last_Name is\",pm.variables.get(\"Last_Name\"));\r",
+							" "
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const myResponse = pm.response.json();\r",
+							"const status = pm.response.status;\r",
+							"const actualStatusCode = pm.response.code;\r",
+							"\r",
+							"pm.test(\"Status Code Validation\",()=>{\r",
+							"    pm.expect(actualStatusCode).to.be.eql(200);\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Verify the Data Update\",()=>{\r",
+							" pm.expect(myResponse.user_first_name).to.be.eql(pm.variables.get(\"First_Name\"));\r",
+							" pm.expect(myResponse.user_last_name).to.be.eql(pm.variables.get(\"Last_Name\"));\r",
+							" pm.expect(myResponse.user_contact_number).to.be.eql(pm.variables.get(\"contactNumber\"));\r",
+							" pm.expect(myResponse.user_email_id).to.be.eql(pm.variables.get(\"email_id\"));\r",
+							" pm.expect(myResponse.userAddress.plotNumber).to.be.eql(pm.variables.get(\"PlotNumber\"));\r",
+							" pm.expect(myResponse.userAddress.street).to.be.eql(pm.variables.get(\"Street\"));\r",
+							" pm.expect(myResponse.userAddress.state).to.be.eql(pm.variables.get(\"State\"));\r",
+							" pm.expect(myResponse.userAddress.country).to.be.eql(pm.variables.get(\"Country\"));\r",
+							" pm.expect(myResponse.userAddress.zipCode).to.be.eql(pm.variables.get(\"ZIP\"));\r",
+							"});\r",
+							"\r",
+							"const UpdatedUsername = myResponse.user_first_name;\r",
+							"pm.collectionVariables.set(\"NewUserName\",UpdatedUsername);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user_first_name\":  \"{{First_Name}}\",\r\n \"user_last_name\":  \"{{Last_Name}}\",       \r\n \"user_contact_number\":  {{contactNumber}},\r\n \"user_email_id\": \"{{email_id}}\",\r\n  \"userAddress\": {\r\n     \"street\": \"{{Street}}\",\r\n     \"plotNumber\": \"{{PlotNumber}}\",\r\n   \"state\": \"{{State}}\",\r\n    \"country\": \"{{Country}}\",\r\n   \"zipCode\": {{ZIP}}\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base-URL}}{{UpdateUserEndPoint}}{{CreatedUserID}}",
+					"host": [
+						"{{Base-URL}}{{UpdateUserEndPoint}}{{CreatedUserID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USER BY USERNAME",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const myResponse = pm.response.json();\r",
+							"const actualStatusCode = pm.response.code;\r",
+							"\r",
+							"//------Test Status Code------\r",
+							"pm.test(\"Status Code Validation\", function () {\r",
+							"    pm.expect(actualStatusCode).to.be.eql(200);\r",
+							"   });\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Base-URL}}{{DeleteUserByFirstName}}{{NewUserName}}",
+					"host": [
+						"{{Base-URL}}{{DeleteUserByFirstName}}{{NewUserName}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE USER WITH MANDATORY DATA",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//-----Generate a random String--------\r",
+							"var random = Math.random().toString(26).substring(2);\r",
+							"\r",
+							"// Generate a random 10-digit number\r",
+							"function generateRandom10DigitNumber() {\r",
+							"    return Math.floor(1000000000 + Math.random() * 9000000000);\r",
+							"}\r",
+							"\r",
+							"var emailId = \"tommy\"+random+\"@gmail.com\"; \r",
+							"var contactNo = generateRandom10DigitNumber();\r",
+							"\r",
+							"pm.variables.set(\"First_Name\",\"NewfirstName\");\r",
+							"pm.variables.set(\"Last_Name\",\"lastTrial\");\r",
+							"pm.variables.set(\"email_id\",emailId);\r",
+							"pm.variables.set(\"contactNumber\",contactNo);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const myResponse = pm.response.json();\r",
+							"const status = pm.response.status;\r",
+							"const actualStatusCode = pm.response.code;\r",
+							"\r",
+							"pm.test(\"Content-Type Validation\", () => {\r",
+							"pm.response.to.have.header('Content-Type', 'application/json');\r",
+							"});\r",
+							"\r",
+							"//------Test Status Code------\r",
+							"pm.test(\"Status Code Validation\", function () {\r",
+							"    pm.expect(actualStatusCode).to.be.eql(201);\r",
+							"    pm.expect(status).to.be.eql(\"Created\");\r",
+							"   });\r",
+							"\r",
+							"pm.test(\"User Name Validation\", function () {\r",
+							"    const actualFirstName = myResponse.user_first_name;\r",
+							"    const expectedFirstName = pm.variables.get(\"First_Name\");\r",
+							"    pm.expect(actualFirstName).to.be.eql(expectedFirstName);\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Response time Validation\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"const ActualUserID = myResponse.user_id;\r",
+							"pm.collectionVariables.set(\"SecondUserID\",ActualUserID);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user_first_name\":  \"{{First_Name}}\",\r\n \"user_last_name\":  \"{{Last_Name}}\",       \r\n \"user_contact_number\": {{contactNumber}} ,\r\n \"user_email_id\": \"{{email_id}}\",\r\n  \"userAddress\": {\r\n     \"street\": null,\r\n     \"plotNumber\": null,\r\n   \"state\": null,\r\n    \"country\": null,\r\n   \"zipCode\": null\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base-URL}}{{CreateUserEndPoint}}",
+					"host": [
+						"{{Base-URL}}{{CreateUserEndPoint}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET-USER-BY-ID Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const myResponse = pm.response.json();\r",
+							"const status = pm.response.status;\r",
+							"const actualStatusCode = pm.response.code;\r",
+							"\r",
+							"pm.test(\"Content-Type Validation\", () => {\r",
+							"pm.response.to.have.header('Content-Type', 'application/json');\r",
+							"});\r",
+							"\r",
+							"//------Test Status Code------\r",
+							"pm.test(\"Status Code Validation\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.eql(200);\r",
+							"   });\r",
+							"\r",
+							"pm.test(\"User ID Validation\", function () {\r",
+							"    const ActualUserID = myResponse.user_id;\r",
+							"    const ExpectedUserID = pm.collectionVariables.get(\"SecondUserID\");\r",
+							"    pm.expect(ActualUserID).to.be.eql(ExpectedUserID);\r",
+							"  });\r",
+							"\r",
+							"pm.test(\"Response time Validation\", function () {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"});\r",
+							"\r",
+							"var schema = {\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"user_first_name\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"user_last_name\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"user_contact_number\": {\r",
+							"      \"type\": \"integer\"\r",
+							"    },\r",
+							"    \"user_email_id\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"userAddress\": {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"plotNumber\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"street\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"state\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"country\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"zipCode\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"plotNumber\",\r",
+							"        \"street\",\r",
+							"        \"state\",\r",
+							"        \"country\",\r",
+							"        \"zipCode\"\r",
+							"      ]\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"user_first_name\",\r",
+							"    \"user_last_name\",\r",
+							"    \"user_contact_number\",\r",
+							"    \"user_email_id\",\r",
+							"    \"userAddress\"\r",
+							"  ]\r",
+							"};\r",
+							"\r",
+							"pm.test(\"Schema Validation\", () => {\r",
+							"  pm.response.to.have.jsonSchema(schema);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Validating fields VALUE TYPE in Response\",function(){\r",
+							"   pm.expect(myResponse).to.be.an(\"Object\");\r",
+							"   pm.expect(myResponse.userAddress).to.be.an(\"Object\");\r",
+							"   pm.expect(myResponse.user_id).to.be.a(\"Number\");\r",
+							"   pm.expect(myResponse.user_first_name).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse.user_last_name).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse.user_contact_number).to.be.an(\"Number\");\r",
+							"   pm.expect(myResponse.user_email_id).to.be.a(\"String\");\r",
+							"   pm.expect(myResponse.userAddress.addressId).to.be.a(\"Number\");\r",
+							"   pm.expect(myResponse.userAddress.plotNumber).to.be.oneOf(\"String\"||null);\r",
+							"   pm.expect(myResponse.userAddress.street).to.be.oneOf(\"String\"||null);\r",
+							"   pm.expect(myResponse.userAddress.state).to.be.oneOf(\"String\"||null);\r",
+							"   pm.expect(myResponse.userAddress.country).to.be.oneOf(\"String\"||null);\r",
+							"   pm.expect(myResponse.userAddress.zipCode).to.be.oneOf(\"Number\"||null);\r",
+							"   pm.expect(myResponse.creation_time).to.be.a('String');\r",
+							"   pm.expect(myResponse.last_mod_time).to.be.a(\"String\");\r",
+							"   });\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base-URL}}{{GetUserByIdEndPoint}}{{SecondUserID}}",
+					"host": [
+						"{{Base-URL}}{{GetUserByIdEndPoint}}{{SecondUserID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE USER BY ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const myResponse = pm.response.json();\r",
+							"const actualStatusCode = pm.response.code;\r",
+							"\r",
+							"//------Test Status Code------\r",
+							"pm.test(\"Status Code Validation\", function () {\r",
+							"    pm.expect(actualStatusCode).to.be.eql(200);\r",
+							"   });\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{Base-URL}}{{DeleteUserById}}{{SecondUserID}}",
+					"host": [
+						"{{Base-URL}}{{DeleteUserById}}{{SecondUserID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{GlobalPassword}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "{{GlobalUserName}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "GetAllUsersEndPoint",
+			"value": "users",
+			"type": "string"
+		},
+		{
+			"key": "GetUserByIdEndPoint",
+			"value": "user/",
+			"type": "string"
+		},
+		{
+			"key": "GetUserByFirstNameEndPoint",
+			"value": "users/username/",
+			"type": "string"
+		},
+		{
+			"key": "CreateUserEndPoint",
+			"value": "createusers",
+			"type": "string"
+		},
+		{
+			"key": "CreatedUserID",
+			"value": ""
+		},
+		{
+			"key": "CreatedUserName",
+			"value": ""
+		},
+		{
+			"key": "UpdateUserEndPoint",
+			"value": "updateuser/",
+			"type": "string"
+		},
+		{
+			"key": "DeleteUserByFirstName",
+			"value": "deleteuser/username/",
+			"type": "string"
+		},
+		{
+			"key": "DeleteUserById",
+			"value": "deleteuser/",
+			"type": "string"
+		},
+		{
+			"key": "SecondUserID",
+			"value": ""
+		},
+		{
+			"key": "NewUserName",
+			"value": ""
+		},
+		{
+			"key": "length",
+			"value": ""
+		}
+	]
+}

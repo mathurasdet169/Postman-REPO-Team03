@@ -1,0 +1,23 @@
+MY PATH BELOW  
+1) (Without Data - CHAIN REQUEST)
+newman run "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\POSTMAN COLLECTIONS\NN-API-CHAINING-REQUEST.postman_collection.json" -r htmlextra --reporter-htmlextra-export "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\NEWMAN REPORTS\API_CHAIN_COLLECTION.html"
+
+2) GET USER BY ID - DDT
+newman run "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\POSTMAN COLLECTIONS\NN-GET-USER-BY-ID-DDT.postman_collection.json" -g "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\POSTMAN COLLECTIONS\workspace.postman_globals.json" -d "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\API TEST DATA\API_DATA_GET_USER_BY_ID.csv" -r htmlextra --reporter-htmlextra-export "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\NEWMAN REPORTS\GET_USER_BY_ID_REPORT.html"
+
+
+3) GET USER BY USERNAME - DDT
+newman run "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\POSTMAN COLLECTIONS\NN-GET-USER-BY-USER FIRST NAME-DDT.postman_collection.json" -g "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\POSTMAN COLLECTIONS\workspace.postman_globals.json" -d "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\API TEST DATA\API_DATA_GET_USER_BY_USERNAME.csv" -r htmlextra --reporter-htmlextra-export "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\NEWMAN REPORTS\GET_USER_BY_USERFIRSTNAME_REPORT.html"
+
+4) GET ALL USERS - DDT
+newman run "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\POSTMAN COLLECTIONS\NN-GET-ALL-USERS-DDT.postman_collection.json" -g "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\POSTMAN COLLECTIONS\workspace.postman_globals.json" -d "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\API TEST DATA\API_DATA_GET_ALL_USERS.csv" -r htmlextra --reporter-htmlextra-export "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\NEWMAN REPORTS\GET_ALL_USERS_REPORT.html"
+
+5) POST USERS -DDT
+newman run "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\POSTMAN COLLECTIONS\NN-POST-API-DDT.postman_collection.json" -g "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\POSTMAN COLLECTIONS\workspace.postman_globals.json" -d "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\API TEST DATA\API_POST_NEW_USER.csv" -r htmlextra --reporter-htmlextra-export "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\NEWMAN REPORTS\POST_USERS_DDT_REPORT.html"
+
+6) DELETE USERS - BY ID
+newman run "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\POSTMAN COLLECTIONS\NN-DELETE-USER-BY-ID-DDT.postman_collection.json" -g "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\POSTMAN COLLECTIONS\workspace.postman_globals.json" -d "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\API TEST DATA\API_DATA_DELETE_BY_ID.csv" -r htmlextra --reporter-htmlextra-export "C:\Users\jayau\OneDrive\Desktop\Numpy Ninja\API-BOOTCAMP\NEWMAN REPORTS\DELETE_BY_USER_ID_DDT_REPORT.html"
+
+
+
+

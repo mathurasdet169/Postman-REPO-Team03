@@ -1,0 +1,230 @@
+{
+	"info": {
+		"_postman_id": "53b8dbaf-e772-4f62-b360-49f87ee8bb3a",
+		"name": "NN-DELETE-USER-BY-ID-DDT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29490019"
+	},
+	"item": [
+		{
+			"name": "CREATE USER",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// //-------Set AUthorization--------\r",
+							"// const username = pm.iterationData.get(\"Username\");\r",
+							"// const password = pm.iterationData.get(\"Password\");\r",
+							"// const base64Credentials = require('btoa')(username + \":\" + password);\r",
+							"// pm.request.headers.add({\r",
+							"//     key: 'Authorization',\r",
+							"//     value: 'Basic ' + base64Credentials\r",
+							"// });\r",
+							"\r",
+							"//-----Generate a random String--------\r",
+							"var random = Math.random().toString(26).substring(2);\r",
+							"\r",
+							"// Generate a random 10-digit number\r",
+							"function generateRandom10DigitNumber() {\r",
+							"    return Math.floor(1000000000 + Math.random() * 9000000000);\r",
+							"}\r",
+							"//----Generate random 10 char String---\r",
+							"function generateRandomString(length) {\r",
+							"    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';\r",
+							"    let result = '';\r",
+							"    for (let i = 0; i < length; i++) {\r",
+							"        const randomIndex = Math.floor(Math.random() * characters.length);\r",
+							"        result += characters[randomIndex];\r",
+							"    }\r",
+							"    return result;\r",
+							"}\r",
+							"\r",
+							"const randomString1 = generateRandomString(10);\r",
+							"const randomString2 = generateRandomString(10);\r",
+							"var emailId = \"team2\"+random+\"@gmail.com\"; \r",
+							"var contactNo = generateRandom10DigitNumber();\r",
+							"\r",
+							"pm.variables.set(\"First_Name\",randomString1);\r",
+							"pm.variables.set(\"Last_Name\",randomString2);\r",
+							"pm.variables.set(\"email_id\",emailId);\r",
+							"pm.variables.set(\"contactNumber\",contactNo);\r",
+							"// pm.variables.set(\"Street\",\"First St\");\r",
+							"// pm.variables.set(\"PlotNumber\",\"Bt-11\");\r",
+							"// pm.variables.set(\"State\",\"Texas\");\r",
+							"// pm.variables.set(\"Country\",\"USA\");\r",
+							"// pm.variables.set(\"ZIP\",54657);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let myResponse = pm.response.json();\r",
+							"let status = pm.response.status;\r",
+							"let actualStatusCode = pm.response.code;\r",
+							"\r",
+							"const testNumber = pm.iterationData.get(\"TestNo\");\r",
+							"const ActualUserID = myResponse.user_id;\r",
+							"\r",
+							"if(testNumber===2){\r",
+							"    pm.collectionVariables.set(\"User_ID_Created\",646478);\r",
+							"}\r",
+							"  else if(testNumber===9){\r",
+							"    pm.collectionVariables.set(\"User_ID_Created\",\"hdgfhd677\");\r",
+							"    }\r",
+							"    else{\r",
+							"         pm.collectionVariables.set(\"User_ID_Created\",ActualUserID);    \r",
+							"    }\r",
+							"    \r",
+							"console.log(\"User_ID_Created is: \"+ActualUserID);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{GlobalPassword}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{GlobalUserName}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"user_first_name\":  \"{{First_Name}}\",\r\n \"user_last_name\":  \"{{Last_Name}}\",       \r\n \"user_contact_number\": {{contactNumber}} ,\r\n \"user_email_id\": \"{{email_id}}\",\r\n  \"userAddress\": {\r\n     \"street\": null,\r\n     \"plotNumber\":null,\r\n   \"state\": null,\r\n    \"country\": null,\r\n   \"zipCode\": null\r\n  }\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base-URL}}{{CreateUserEndPoint}}",
+					"host": [
+						"{{Base-URL}}{{CreateUserEndPoint}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE-USER-BY-ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let myResponse = pm.response.json();\r",
+							"let actualStatusCode = pm.response.code;\r",
+							"let expectedStatusCode =pm.iterationData.get(\"ExpectedStatusCode\");\r",
+							"\r",
+							"//------Test Status Code------\r",
+							"pm.test(\"Status Code Validation\", function () {\r",
+							"    pm.expect(actualStatusCode).to.be.eql(expectedStatusCode);\r",
+							"   });\r",
+							"\r",
+							"console.log(\"Actual and Expected code\"+ actualStatusCode+\" \"+expectedStatusCode);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//-------Set AUthorization--------\r",
+							"const username = pm.iterationData.get(\"Username\");\r",
+							"const password = pm.iterationData.get(\"Password\");\r",
+							"const base64Credentials = require('btoa')(username + \":\" + password);\r",
+							"pm.request.headers.add({\r",
+							"    key: 'Authorization',\r",
+							"    value: 'Basic ' + base64Credentials\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base-URL}}{{DeleteUserEndPoint}}{{User_ID_Created}}",
+					"host": [
+						"{{Base-URL}}{{DeleteUserEndPoint}}{{User_ID_Created}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "CreateUserEndPoint",
+			"value": "createusers",
+			"type": "string"
+		},
+		{
+			"key": "User_ID_Created",
+			"value": ""
+		},
+		{
+			"value": "",
+			"type": "string"
+		}
+	]
+}

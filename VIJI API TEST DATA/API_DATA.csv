@@ -1,0 +1,21 @@
+﻿UserData,EndPoint,StatusCode,Status,Username,Password,Comments,
+1426,user/,200,OK,Numpy@gmail.com,userapi@nn,Valid,GET USER BY ID
+16568,user/,404,Not Found,Numpy@gmail.com,userapi@nn,Non-existing  Id,
+alphabet,user/,400,Bad Request,Numpy@gmail.com,userapi@nn,Alphabet id,
+,user/,404,Not Found,Numpy@gmail.com,userapi@nn,Without Id,
+1426,,404,Not Found,Numpy@gmail.com,userapi@nn,Without Endpoint,
+1426,myuser/,404,Not Found,Numpy@gmail.com,userapi@nn,Invalid Endpoint,
+1426,user/,401,Unauthorized,Numpy@gmail.com,Invalid,Invalid Auth pwd ,
+1426,user/,401,Unauthorized,Invalid,userapi@nn,Invalid Auth Username ,
+,users,200,OK,Numpy@gmail.com,userapi@nn,Valid,GET ALL USERS
+,getusers,404,Not Found,Numpy@gmail.com,userapi@nn,Invalid Endpoint,
+,,404,Not Found,Numpy@gmail.com,userapi@nn,Without Endpoint,
+,users,401,Unauthorized,Numpy@gmail.com,Invalid,Invalid Auth pwd ,
+,users,401,Unauthorized,Invalid,userapi@nn,Invalid Auth Username ,
+teamtwotrial,users/username/,200,OK,Numpy@gmail.com,userapi@nn,Valid,GET USER BY USERNAME
+Vijaya,users/username/,404,Not Found,Numpy@gmail.com,userapi@nn,Non-existing Username,
+,users/username/,404,Not Found,Numpy@gmail.com,userapi@nn,Without Username,
+teamtwotrial,,404,Not Found,Numpy@gmail.com,userapi@nn,Without Endpoint,
+teamtwotrial,myuser/username,404,Not Found,Numpy@gmail.com,userapi@nn,Invalid Endpoint,
+teamtwotrial,users/username/,401,Unauthorized,Numpy@gmail.com,Invalid,Invalid Auth pwd ,
+teamtwotrial,users/username/,401,Unauthorized,Invalid,userapi@nn,Invalid Auth Username ,

@@ -1,0 +1,51 @@
+{
+	"id": "f2e0791f-ef60-4bd4-8f39-316e03ca467b",
+	"values": [
+		{
+			"key": "Base-URL",
+			"value": "https://userserviceapp-f5a54828541b.herokuapp.com/uap/",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "GlobalUserName",
+			"value": "Numpy@gmail.com",
+			"type": "secret",
+			"enabled": true
+		},
+		{
+			"key": "GlobalPassword",
+			"value": "userapi@october",
+			"type": "secret",
+			"enabled": true
+		},
+		{
+			"key": "email_id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "contactNumber",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "user_first_name",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "user_last_name",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2024-10-14T16:03:15.833Z",
+	"_postman_exported_using": "Postman/11.16.1"
+}

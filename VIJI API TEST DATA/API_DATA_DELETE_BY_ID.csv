@@ -1,0 +1,10 @@
+﻿DeleteUserEndPoint,UserID,Username,Password,ExpectedStatusCode,TestNo,,,,,
+deleteuser/,,Numpy@gmail.com,userapi@october,200,1,Valid User ID,,,,
+deleteuser/,34,Numpy@gmail.com,userapi@october,404,2,InValid UserId,,,,
+deleteuser/,,,,401,3,Without Auth,,,,
+deluser/,,Numpy@gmail.com,userapi@october,404,4,Invalid Endpoint,,,,
+,,Numpy@gmail.com,userapi@october,404,5,Without Endpoint,,,,
+deleteuser/,,trial@gmail.com,userapi@october,401,6,Invalid auth Username,,,,
+deleteuser/,,Numpy@gmail.com,trialapi@nn,401,7,Invalid auth pwd,,,,FAIL
+updateuser/,,Numpy@gmail.com,userapi@october,405,8,Invalid Method for update by Id,,,,
+deleteuser/,dsgf3465,Numpy@gmail.com,userapi@october,400,9,Alphanumeric UserId,,,,

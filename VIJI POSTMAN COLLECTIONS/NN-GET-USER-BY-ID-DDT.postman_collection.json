@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "fcc8016a-df8b-4de5-81a7-fefebe672fbc",
+		"name": "NN-GET-USER-BY-ID-DDT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29490019"
+	},
+	"item": [
+		{
+			"name": "GET-USER-BY-ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const myResponse = pm.response.json();\r",
+							"var expectedCode = pm.iterationData.get(\"StatusCode\");\r",
+							"var expectedStatus = pm.iterationData.get(\"Status\");\r",
+							"\r",
+							"var schema = {\r",
+							"  \"type\": \"object\",\r",
+							"  \"properties\": {\r",
+							"    \"user_first_name\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"user_last_name\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"user_contact_number\": {\r",
+							"      \"type\": \"integer\"\r",
+							"    },\r",
+							"    \"user_email_id\": {\r",
+							"      \"type\": \"string\"\r",
+							"    },\r",
+							"    \"userAddress\": {\r",
+							"      \"type\": \"object\",\r",
+							"      \"properties\": {\r",
+							"        \"plotNumber\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"street\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"state\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"country\": {\r",
+							"          \"type\": \"string\"\r",
+							"        },\r",
+							"        \"zipCode\": {\r",
+							"          \"type\": \"integer\"\r",
+							"        }\r",
+							"      },\r",
+							"      \"required\": [\r",
+							"        \"plotNumber\",\r",
+							"        \"street\",\r",
+							"        \"state\",\r",
+							"        \"country\",\r",
+							"        \"zipCode\"\r",
+							"      ]\r",
+							"    }\r",
+							"  },\r",
+							"  \"required\": [\r",
+							"    \"user_first_name\",\r",
+							"    \"user_last_name\",\r",
+							"    \"user_contact_number\",\r",
+							"    \"user_email_id\",\r",
+							"    \"userAddress\"\r",
+							"  ]\r",
+							"}; \r",
+							"\r",
+							"\r",
+							"//-------------Test Validations-----------------------\r",
+							"pm.test(\"Status Code Test\",()=>{\r",
+							"   //-----------Test STATUS CODE--------- \r",
+							"   pm.expect(pm.response.code).to.be.eql(expectedCode);\r",
+							"   pm.response.to.have.status(expectedStatus);\r",
+							"\r",
+							"   if(expectedCode===200)\r",
+							"     {\r",
+							"      //-------Verify the UserID Retrieved-----\r",
+							"      const ActualUserID = myResponse.user_id;\r",
+							"      pm.expect(ActualUserID).to.eql(pm.iterationData.get(\"UserID\"));\r",
+							"\r",
+							"      //------Content Type Validation---------\r",
+							"        pm.test(\"Content-Type Validation\", () => {\r",
+							"          pm.response.to.have.header('Content-Type', 'application/json');\r",
+							"        });\r",
+							"\r",
+							"      //-----Schema Validation----------\r",
+							"        pm.test(\"Schema Validation\", () => {\r",
+							"           pm.response.to.have.jsonSchema(schema);\r",
+							"        });\r",
+							"\r",
+							"      //-----Validate Data type of fields---\r",
+							"       pm.test(\"Validating fields VALUE TYPE in Response\",function(){\r",
+							"        pm.expect(myResponse).to.be.an(\"Object\");\r",
+							"        pm.expect(myResponse.userAddress).to.be.an(\"Object\");\r",
+							"        pm.expect(myResponse.user_id).to.be.a(\"Number\");\r",
+							"        pm.expect(myResponse.user_first_name).to.be.a(\"String\");\r",
+							"        pm.expect(myResponse.user_last_name).to.be.a(\"String\");\r",
+							"        pm.expect(myResponse.user_contact_number).to.be.an(\"Number\");\r",
+							"        pm.expect(myResponse.user_email_id).to.be.a(\"String\");\r",
+							"        pm.expect(myResponse.userAddress.addressId).to.be.a(\"Number\");\r",
+							"        pm.expect(myResponse.userAddress.plotNumber).to.be.a(\"String\");\r",
+							"        pm.expect(myResponse.userAddress.street).to.be.a(\"String\");\r",
+							"        pm.expect(myResponse.userAddress.state).to.be.a(\"String\");\r",
+							"        pm.expect(myResponse.userAddress.country).to.be.a(\"String\");\r",
+							"        pm.expect(myResponse.userAddress.zipCode).to.be.a(\"Number\");\r",
+							"        pm.expect(myResponse.creation_time).to.be.a('String');\r",
+							"        pm.expect(myResponse.last_mod_time).to.be.a(\"String\");\r",
+							"      });\r",
+							"\r",
+							"     }\r",
+							"\r",
+							"     \r",
+							" });\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const username = pm.iterationData.get(\"Username\");\r",
+							"const password = pm.iterationData.get(\"Password\");\r",
+							"const base64Credentials = require('btoa')(username + \":\" + password);\r",
+							"pm.request.headers.add({\r",
+							"    key: 'Authorization',\r",
+							"    value: 'Basic ' + base64Credentials\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base-URL}}{{EndPoint}}{{UserID}}",
+					"host": [
+						"{{Base-URL}}{{EndPoint}}{{UserID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

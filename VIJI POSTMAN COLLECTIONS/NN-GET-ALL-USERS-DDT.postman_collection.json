@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "ddd29e8c-016d-4cbe-834d-0dec80302087",
+		"name": "NN-GET-ALL-USERS-DDT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29490019"
+	},
+	"item": [
+		{
+			"name": "GET-ALL-USERS",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const myResponse = pm.response.json();\r",
+							"\r",
+							"//-------------Test Status Code----------------\r",
+							"pm.test(\"Status Code Test\",()=>{\r",
+							"  var expectedCode = pm.iterationData.get(\"StatusCode\");\r",
+							"  var expectedStatus = pm.iterationData.get(\"Status\");\r",
+							"  pm.expect(pm.response.code).to.be.eql(expectedCode);\r",
+							"  pm.response.to.have.status(expectedStatus);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//pm.variables.set(\"Username\",pm.iterationData.get(Username));\r",
+							"const username = pm.iterationData.get(\"Username\");\r",
+							"const password = pm.iterationData.get(\"Password\");\r",
+							"const base64Credentials = require('btoa')(username + \":\" + password);\r",
+							"pm.request.headers.add({\r",
+							"    key: 'Authorization',\r",
+							"    value: 'Basic ' + base64Credentials\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Base-URL}}{{EndPoint}}",
+					"host": [
+						"{{Base-URL}}{{EndPoint}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

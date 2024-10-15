@@ -1,0 +1,13 @@
+﻿UserID,EndPoint,StatusCode,Status,Username,Password,Comments,,,
+8315,user/,200,OK,Numpy@gmail.com,userapi@october,Valid,GET USER BY ID,,
+16568,user/,404,Not Found,Numpy@gmail.com,userapi@october,Non-existing  Id,,,
+alphabet,user/,400,Bad Request,Numpy@gmail.com,userapi@october,Alphabet id,,,
+jdgf677,user/,400,Bad Request,Numpy@gmail.com,userapi@october,AlphanumericId,,,
+,user/,404,Not Found,Numpy@gmail.com,userapi@october,Without Id,,,
+,,404,Not Found,Numpy@gmail.com,userapi@october,Without Endpoint,,,
+8315,myuser/,404,Not Found,Numpy@gmail.com,userapi@october,Incorrect Endpoint,,,
+8315,user/,401,Unauthorized,Numpy@gmail.com,Invalid,Invalid Auth pwd ,,,FAIL
+8315,user/,401,Unauthorized,Invalid,userapi@october,Invalid Auth Username ,,,
+8315,user/,401,Unauthorized,,,Without Auth,,,
+8315,deleteuser/,405,Method Not Allowed,Numpy@gmail.com,userapi@october,"Test deleteByID Endpoint
+ in Get Method",,,
