@@ -1,0 +1,417 @@
+   
+    {
+		 "post_postiveAllFields": {
+      "user_first_name": "Kalyan",
+      "user_last_name": "lname",
+      "user_contact_number": "2233445534",
+      "user_email_id": "Team03Mathu@gmail.com",
+      "userAddress": {
+          
+          "plotNumber": "pl-02",
+          "street": "street",
+          "state": "ghu",
+          "country": "jhh",
+          "zipCode": "123456"
+		  }
+		  },
+		  
+			"post_alphanumericFirstName": {
+			     "user_first_name": "Kalyan123",
+			     "user_last_name": "Manu",
+			     "user_contact_number": "1122334451",
+			     "user_email_id": "hjkjygvgh@gmail.com",
+			     "userAddress": {
+			         
+			         "plotNumber": "pl-20",
+			         "street": "jhkg",
+			         "state": "nbhfgf",
+			         "country": "fhbjkljo",
+			         "zipCode": "34562"
+				  }
+				  },
+				  
+					"post_emptyLastName":{
+						"user_first_name": "Kalyan",
+						      "user_last_name": "",
+						      "user_contact_number": "1122334451",
+						      "user_email_id": "Team03@gmail.com",
+						      "userAddress": {
+						          
+						          "plotNumber": "pl-02",
+						          "street": "street",
+						          "state": "ghu",
+						          "country": "jhh",
+						          "zipCode": "123456"
+								  }
+								
+					},
+					"post_contactNumberMoreThan10":{
+						"user_first_name": "Kalyan",
+						      "user_last_name": "lname",
+						      "user_contact_number": "78765356748976",
+						      "user_email_id": "Team03@gmail.com",
+						      "userAddress": {
+						          
+						          "plotNumber": "pl-02",
+						          "street": "street",
+						          "state": "ghu",
+						          "country": "jhh",
+						          "zipCode": "123456"
+								  }
+								
+					},
+					"post_sameEmailId":{					
+						"user_first_name": "Kalyan",
+					      "user_last_name": "lname",
+					      "user_contact_number": "7876535111",
+					      "user_email_id": "Team03Mathu@gmail.com",
+					      "userAddress": {
+					          
+					          "plotNumber": "pl-02",
+					          "street": "street",
+					          "state": "ghu",
+					          "country": "jhh",
+					          "zipCode": "123456"
+							  }
+							},
+							
+							"post_contactNumberLessThan10":{
+								 "user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445",
+							      "user_email_id": "Team03Mathu33@gmail.com",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "ghu",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+									
+							},
+							"post_emailastrtswith@":{
+							"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445576",
+							      "user_email_id": "@Team03Mathu@gmail.com",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "ghu",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+									
+							},
+							"post_emailendswith@":{"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445576",
+							      "user_email_id": "Team03Mathu33@gmail.com@",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "ghu",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+								},
+							"post_emptyEmail":{"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445567",
+							      "user_email_id": "",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "ghu",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+								},
+							"post_emptyContactNo":{
+							"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "",
+							      "user_email_id": "Team03Mathu33@gmail.com",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "ghu",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+								},
+							"post_streetempty":{"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445587",
+							      "user_email_id": "Team03Mathu33@gmail.com",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "",
+							          "state": "ghu",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+								},
+							"post_statempty":{"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445987",
+							      "user_email_id": "Team03Mathu33@gmail.com",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+								},
+							"post_countryEmpty":{"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445587",
+							      "user_email_id": "Team03Mathu33@gmail.com",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "ghu",
+							          "country": "",
+							          "zipCode": "123456"
+									  }
+								},
+							"put_alphanumericlastName":{
+								"user_first_name": "Kalyan",
+								     "user_last_name": "lname234",
+								     "user_contact_number": "1122334499",
+								     "user_email_id": "Team03Mathura@gmail.com",
+								     "userAddress": {
+								         
+								         "plotNumber": "pl-02",
+								         "street": "street",
+								         "state": "ghu",
+								         "country": "jhh",
+								         "zipCode": "123456"
+										 }
+							},
+							"put_emptyfirstName":{
+								
+																	"user_first_name": "",
+																     "user_last_name": "Manu",
+																     "user_contact_number": "1122334499",
+																     "user_email_id": "Team03Mathura@gmail.com",
+																     "userAddress": {
+																         
+																         "plotNumber": "pl-02",
+																         "street": "street",
+																         "state": "ghu",
+																         "country": "jhh",
+																         "zipCode": "123456"
+																		 }
+														
+							},
+							"put_contactNumberlessThan10":{
+								
+																	"user_first_name": "Kalyan",
+																     "user_last_name": "lname",
+																     "user_contact_number": "1122",
+																     "user_email_id": "Team03Mathura@gmail.com",
+																     "userAddress": {
+																         
+																         "plotNumber": "pl-02",
+																         "street": "street",
+																         "state": "ghu",
+																         "country": "jhh",
+																         "zipCode": "123456"
+																		 }
+													
+							},
+							"put_sameContactNo":{
+								
+																	"user_first_name": "Mathu",
+																     "user_last_name": "Manu",
+																     "user_contact_number": "1122334455",
+																     "user_email_id": "Team03Mathura@gmail.com",
+																     "userAddress": {
+																         
+																         "plotNumber": "pl-02",
+																         "street": "street",
+																         "state": "ghu",
+																         "country": "jhh",
+																         "zipCode": "123456"
+																		 }
+													
+							},
+							"put_postiveAllFields":{
+								
+								"user_first_name": "Mathu",
+													    "user_last_name": "Manu",
+													   "user_contact_number": "1122334789",
+													    "user_email_id": "Team03Mathura@gmail.com",
+													    "userAddress": {
+													 
+																	         "plotNumber": "pl-02",
+														         "street": "street",
+															         "state": "ghu",
+																		   "country": "jhh",
+																		    "zipCode": "123456"
+																			}
+																		
+								
+							},
+							"put_contactNumberMoreThan10":{
+								 "user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445",
+							      "user_email_id": "Team03Mathu33@gmail.com",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "ghu",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+									
+							},
+							"put_emailastrtswith@":{
+							"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445576",
+							      "user_email_id": "@Team03Mathu@gmail.com",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "ghu",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+									
+							},
+							"put_emailendswith@":{"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445576",
+							      "user_email_id": "Team03Mathu33@gmail.com@",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "ghu",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+								},
+							"put_emptyEmail":{"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445567",
+							      "user_email_id": "",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "ghu",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+								},
+							"put_emptyContactNo":{
+							"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "",
+							      "user_email_id": "Team03Mathu33@gmail.com",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "ghu",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+								},
+							"put_streetempty":{"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445587",
+							      "user_email_id": "Team03Mathu33@gmail.com",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "",
+							          "state": "ghu",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+								},
+							"put_statempty":{"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445987",
+							      "user_email_id": "Team03Mathu33@gmail.com",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "",
+							          "country": "jhh",
+							          "zipCode": "123456"
+									  }
+								},
+							"put_countryEmpty":{"user_first_name": "Kalyan",
+							      "user_last_name": "lname",
+							      "user_contact_number": "2233445587",
+							      "user_email_id": "Team03Mathu33@gmail.com",
+							      "userAddress": {
+							          
+							          "plotNumber": "pl-02",
+							          "street": "street",
+							          "state": "ghu",
+							          "country": "",
+							          "zipCode": "123456"
+									  }
+								},
+							"post_MandatoryFieldPositive":{
+								
+								
+								"user_first_name":  "Kalyan",
+								 "user_last_name":  "Manu",         
+								 "user_contact_number": "1199228855",  
+								  "user_email_id": "Team03Diya@gmail.com",
+
+								"userAddress": {
+								   								}
+
+							},
+							"post_MandatoryAlphaNumericFirstName":{
+								
+								"user_first_name":  "Kalyan345",
+																 "user_last_name":  "Manu",         
+																 "user_contact_number": "1213141599",  
+																  "user_email_id": "Team03Diya12@gmail.com",
+
+																"userAddress": {
+																   								}
+
+								
+							},
+							"post_MandatoryEmptyLastName":{
+								
+								
+								"user_first_name":  "Kalyan",
+																 "user_last_name":  "",         
+																 "user_contact_number": "1213141588",  
+																  "user_email_id": "Team03Diya11@gmail.com",
+
+																"userAddress": {
+																   								}
+
+							}
+							
+							
+							
+  }
+				
+			
+		  
